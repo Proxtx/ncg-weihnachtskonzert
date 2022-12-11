@@ -1,0 +1,25 @@
+{
+  "name": "ncg-weihnachtskonzert",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "nodemon ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Proxtx/ncg-weihnachtskonzert.git"
+  },
+  "author": "Proxtx, Totti, NCG",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Proxtx/ncg-weihnachtskonzert/issues"
+  },
+  "homepage": "https://github.com/Proxtx/ncg-weihnachtskonzert#readme",
+  "dependencies": {
+    "@proxtx/config": "^1.0.2",
+    "@proxtx/framework": "^1.5.6",
+    "@proxtx/material": "^1.2.3"
+  }
+}

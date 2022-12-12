@@ -28,7 +28,7 @@ body {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background: linear-gradient(
     90deg,
-    hsla(0, 84%, 88%, 1) 0%,
+    rgb(252, 225, 225) 0%,
     hsla(24, 88%, 97%, 1) 100%
   );
 }
@@ -56,4 +56,12 @@ h4 {
 
 #logo {
   height: 50px;
+}
+
+.floaty {
+  position: absolute;
+  transition: 3s;
+  transform: translate(-50%, -50%) rotate(0deg);
+  pointer-events: none;
+  opacity: 1;
 }

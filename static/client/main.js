@@ -1,4 +1,5 @@
 import { createFloaty } from "../lib/floaty.js";
+import { connect } from "../lib/wsConnectionHandler.js";
 
 let reactions = await framework.load("reactions.js");
 let emojis = await reactions.reactions;
@@ -24,9 +25,14 @@ for (let emoji in emojis) {
   wrap.appendChild(generateCircle(emojis[emoji], emoji));
 }
 
-(async () => {
-  while (true) {
-    document.getElementById("info").innerText = await reactions.text;
-    await new Promise((r) => setTimeout(r, 5000));
-  }
-})();
+framework.ws.addModule(
+  {
+    setText: (text) => {
+      document.getElementById("info").innerText = text;
+      return { success: true };
+    },
+  },
+  "textReceiver"
+);
+
+connect();

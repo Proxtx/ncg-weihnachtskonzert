@@ -1,4 +1,4 @@
-let reactions = await framework.load("reactions.js");
+let reactions = await framework.load("currentMessage.js");
 
 while (!(await reactions.checkPwd(localStorage.pwd))) {
   localStorage.pwd = prompt("PWD");

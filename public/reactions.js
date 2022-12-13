@@ -1,7 +1,4 @@
-import process from "process";
-
 export const reactions = ["❤️", "🎵", "👏", "🎻", "🎺"];
-export let text = "";
 
 let callbacks = [];
 
@@ -15,13 +12,4 @@ global.handler = (module) => {
     if (disable || !(await module.createReaction(index)).success)
       disable = true;
   });
-};
-
-export const setText = (pwd, newText) => {
-  if (pwd != process.env.PWD) return;
-  text = newText;
-};
-
-export const checkPwd = (pwd) => {
-  return pwd == process.env.PWD;
 };

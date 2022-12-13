@@ -5,7 +5,8 @@
   "main": "main.js",
   "type": "module",
   "scripts": {
-    "test": "nodemon ."
+    "test": "nodemon .",
+    "run": "node ."
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,6 @@
   },
   "homepage": "https://github.com/Proxtx/ncg-weihnachtskonzert#readme",
   "dependencies": {
-    "@proxtx/config": "^1.0.2",
     "@proxtx/framework": "^1.5.8",
     "@proxtx/material": "^1.2.3"
   }

@@ -1,10 +1,10 @@
 import { listen } from "@proxtx/framework";
-import config from "@proxtx/config";
+import process from "process";
 
-let result = await listen(config.port);
+let result = await listen(process.env.PORT);
 let combineHandler = await result.combineHandler(result.server);
 combineHandler.onCombine("reactionReceiver", (module) => {
   global.handler(module);
 });
 
-console.log("Server started. Port:", config.port);
+console.log("Server started. Port:", process.env.PORT);

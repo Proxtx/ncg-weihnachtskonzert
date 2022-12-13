@@ -1,4 +1,4 @@
-import config from "@proxtx/config";
+import process from "process";
 
 export const reactions = ["❤️", "🎵", "👏", "🎻", "🎺"];
 export let text = "";
@@ -18,10 +18,10 @@ global.handler = (module) => {
 };
 
 export const setText = (pwd, newText) => {
-  if (pwd != config.pwd) return;
+  if (pwd != process.env.PWD) return;
   text = newText;
 };
 
 export const checkPwd = (pwd) => {
-  return pwd == config.pwd;
+  return pwd == process.env.PWD;
 };

@@ -23,3 +23,10 @@ let wrap = document.getElementById("bottomBar");
 for (let emoji in emojis) {
   wrap.appendChild(generateCircle(emojis[emoji], emoji));
 }
+
+(async () => {
+  while (true) {
+    document.getElementById("info").innerText = await reactions.text;
+    await new Promise((r) => setTimeout(r, 5000));
+  }
+})();

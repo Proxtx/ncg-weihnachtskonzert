@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WH22 - Set Current</title>
+  </head>
+  <body>
+    <div id="wrap">
+      <m-text-input
+        id="text"
+        textarea="true"
+        placeholder="Currently Playing"
+        value="Jetzt spielt: "
+      ></m-text-input>
+      <br /><br />
+      <m-button onclick="window.changeCur()">Send</m-button>
+    </div>
+    <script class="server" src="private/render/linker.js"></script>
+  </body>
+</html>

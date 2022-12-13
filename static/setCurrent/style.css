@@ -1,0 +1,9 @@
+body {
+  margin: var(--contentSpacing);
+}
+
+#wrap {
+  padding: var(--contentSpacing);
+  background-color: var(--backgroundColor);
+  border-radius: 8px;
+}

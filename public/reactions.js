@@ -1,4 +1,7 @@
+import config from "@proxtx/config";
+
 export const reactions = ["❤️", "🎵", "👏", "🎻", "🎺"];
+export let text = "";
 
 let callbacks = [];
 
@@ -12,4 +15,13 @@ global.handler = (module) => {
     if (disable || !(await module.createReaction(index)).success)
       disable = true;
   });
+};
+
+export const setText = (pwd, newText) => {
+  if (pwd != config.pwd) return;
+  text = newText;
+};
+
+export const checkPwd = (pwd) => {
+  return pwd == config.pwd;
 };

@@ -1,11 +1,12 @@
-export const createFloaty = (x, y, emoji) => {
+export const createFloaty = (x, y, emoji, reverse=false) => {
   let floaty = document.createElement("h2");
   floaty.innerText = emoji;
   floaty.className = "floaty";
   floaty.style.left = x + "px";
   floaty.style.top = y + "px";
   setTimeout(async () => {
-    floaty.style.top = y - Math.random() * 500 + "px";
+    if(!reverse)floaty.style.top = y - Math.random() * 500 + "px";
+    else floaty.style.top = y + Math.random() * 500 + "px";
     floaty.style.left = x + Math.random() * 40 - 20 + "px";
     floaty.style.transform = `translate(-50%, -50%) rotate( ${
       Math.random() * 80 - 40

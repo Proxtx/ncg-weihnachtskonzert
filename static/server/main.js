@@ -10,6 +10,7 @@ framework.ws.addModule(
   {
     setScale: (newScale) => {
       scale = newScale;
+      return { success: true };
     },
     createReaction: (index) => {
       createFloaty(

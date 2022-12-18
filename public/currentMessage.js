@@ -24,7 +24,7 @@ global.textHandler = async (module) => {
   await module.clientTimeout(timeout);
   let func = async (method, value) => {
     try {
-      if (!(await module[method](text)).success)
+      if (!(await module[method](value)).success)
         callbacks.splice(callbacks.indexOf(func), 1);
     } catch {}
   };

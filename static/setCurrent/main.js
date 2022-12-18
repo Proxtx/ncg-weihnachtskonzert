@@ -31,3 +31,9 @@ window.clientTimeout = async () => {
 
   alert("Send");
 };
+
+window.setDisable = async (disable) => {
+  await reactions.setDisable(localStorage.pwd, disable);
+
+  alert("Set");
+};

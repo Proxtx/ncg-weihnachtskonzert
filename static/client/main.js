@@ -8,7 +8,7 @@ let timeout = await reactions.timeout;
 const generateCircle = (emoji, index) => {
   let wrap = document.createElement("div");
   wrap.className = "circle";
-  let emojiWrap = document.createElement("h2");
+  let emojiWrap = document.createElement("h1");
   emojiWrap.innerText = emoji;
   let wave = document.createElement("m-wave");
   wrap.appendChild(emojiWrap);

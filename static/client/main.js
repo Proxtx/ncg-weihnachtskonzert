@@ -14,7 +14,7 @@ const generateCircle = (emoji, index) => {
   wrap.appendChild(emojiWrap);
   wrap.appendChild(wave);
   wrap.addEventListener("click", (e) => {
-    createFloaty(e.pageX, e.pageY, emoji);
+    createFloaty(e.pageX, e.pageY, emoji, false, 2);
     reactions.sendReaction(index);
     reactionWrap.style.pointerEvents = "none";
     setTimeout(() => {

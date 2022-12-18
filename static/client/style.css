@@ -13,14 +13,21 @@
   bottom: 0;
   left: 0;
   width: 100%;*/
-  display: grid;
+  /*display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, 1fr);
   grid-column-gap: var(--contentSpacing);
   grid-row-gap: var(--contentSpacing);
   width: 100%;
   height: 100%;
+  padding: var(--contentSpacing);*/
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--contentSpacing);
   padding: var(--contentSpacing);
+  justify-content: center;
 }
 
 .circle {
@@ -35,10 +42,16 @@
   align-items: center;
   justify-content: center;
   backdrop-filter: blur();
+  backdrop-filter: brightness(0.9);
+  width: 160px;
 }
 
 .circle:hover {
   box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.25);
+}
+
+.circle h1 {
+  font-size: 300%;
 }
 
 #info {

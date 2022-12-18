@@ -3,6 +3,7 @@ import { connect } from "../lib/wsConnectionHandler.js";
 
 let reactions = await framework.load("reactions.js");
 let emojis = await reactions.reactions;
+let timeout = await reactions.timeout;
 
 const generateCircle = (emoji, index) => {
   let wrap = document.createElement("div");
@@ -15,20 +16,28 @@ const generateCircle = (emoji, index) => {
   wrap.addEventListener("click", (e) => {
     createFloaty(e.pageX, e.pageY, emoji);
     reactions.sendReaction(index);
+    reactionWrap.style.pointerEvents = "none";
+    setTimeout(() => {
+      reactionWrap.style.pointerEvents = "unset";
+    }, timeout);
   });
   return wrap;
 };
 
-let wrap = document.getElementById("bottomBar");
+let reactionWrap = document.getElementById("bottomBar");
 
 for (let emoji in emojis) {
-  wrap.appendChild(generateCircle(emojis[emoji], emoji));
+  reactionWrap.appendChild(generateCircle(emojis[emoji], emoji));
 }
 
 framework.ws.addModule(
   {
     setText: (text) => {
       document.getElementById("info").innerText = text;
+      return { success: true };
+    },
+    clientTimeout: (newTimeout) => {
+      timeout = newTimeout;
       return { success: true };
     },
   },

@@ -7,7 +7,9 @@
     <title>WH22 - Set Current</title>
   </head>
   <body>
-    <div id="wrap">
+    <div class="wrap">
+      <h3>Client Text</h3>
+      <br />
       <m-text-input
         id="text"
         textarea="true"
@@ -16,6 +18,28 @@
       ></m-text-input>
       <br /><br />
       <m-button onclick="window.changeCur()">Send</m-button>
+    </div>
+    <div class="wrap">
+      <h3>Server Scale</h3>
+      <br />
+      <m-text-input
+        number="true"
+        placeholder="Scale"
+        value="1.0"
+        id="scale"
+      ></m-text-input
+      ><br /><br /><m-button onclick="window.changeScale()">Send</m-button>
+    </div>
+    <div class="wrap">
+      <h3>Client Timeout</h3>
+      <br />
+      <m-text-input
+        number="true"
+        placeholder="Timeout (ms)"
+        value="500"
+        id="clientTimeout"
+      ></m-text-input
+      ><br /><br /><m-button onclick="window.clientTimeout()">Send</m-button>
     </div>
     <script class="server" src="private/render/linker.js"></script>
   </body>

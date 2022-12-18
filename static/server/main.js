@@ -4,14 +4,20 @@ import { connect } from "../lib/wsConnectionHandler.js";
 let reactions = await framework.load("reactions.js");
 let emojis = await reactions.reactions;
 
+let scale = 1;
+
 framework.ws.addModule(
   {
+    setScale: (newScale) => {
+      scale = newScale;
+    },
     createReaction: (index) => {
       createFloaty(
-        (window.innerWidth / emojis.length) * index +
-          window.innerWidth / emojis.length / 2,
-        window.innerHeight,
-        emojis[index]
+        Math.random() * window.innerWidth,
+        0,
+        emojis[index],
+        true,
+        scale
       );
       return { success: true };
     },

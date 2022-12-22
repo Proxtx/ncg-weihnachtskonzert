@@ -1,4 +1,4 @@
-export const reactions = ["❤️", "🎵", "👏", "🎻", "🎺", "🤣"];
+export const reactions = ["❤️", "🎵", "👏", "🎻", "🎺"];
 
 let callbacks = [];
 const PWD = process.env.PWD || "test";
